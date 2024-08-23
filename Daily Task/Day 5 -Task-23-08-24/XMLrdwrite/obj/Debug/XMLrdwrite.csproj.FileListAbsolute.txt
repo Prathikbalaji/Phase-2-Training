@@ -1,0 +1,10 @@
+C:\Users\Prathik.b\Source\Repos\XMLrdwrite\XMLrdwrite\bin\Debug\XMLrdwrite.exe.config
+C:\Users\Prathik.b\Source\Repos\XMLrdwrite\XMLrdwrite\bin\Debug\XMLrdwrite.exe
+C:\Users\Prathik.b\Source\Repos\XMLrdwrite\XMLrdwrite\bin\Debug\XMLrdwrite.pdb
+C:\Users\Prathik.b\Source\Repos\XMLrdwrite\XMLrdwrite\obj\Debug\XMLrdwrite.csproj.AssemblyReference.cache
+C:\Users\Prathik.b\Source\Repos\XMLrdwrite\XMLrdwrite\obj\Debug\XMLrdwrite.Form1.resources
+C:\Users\Prathik.b\Source\Repos\XMLrdwrite\XMLrdwrite\obj\Debug\XMLrdwrite.Properties.Resources.resources
+C:\Users\Prathik.b\Source\Repos\XMLrdwrite\XMLrdwrite\obj\Debug\XMLrdwrite.csproj.GenerateResource.cache
+C:\Users\Prathik.b\Source\Repos\XMLrdwrite\XMLrdwrite\obj\Debug\XMLrdwrite.csproj.CoreCompileInputs.cache
+C:\Users\Prathik.b\Source\Repos\XMLrdwrite\XMLrdwrite\obj\Debug\XMLrdwrite.exe
+C:\Users\Prathik.b\Source\Repos\XMLrdwrite\XMLrdwrite\obj\Debug\XMLrdwrite.pdb
