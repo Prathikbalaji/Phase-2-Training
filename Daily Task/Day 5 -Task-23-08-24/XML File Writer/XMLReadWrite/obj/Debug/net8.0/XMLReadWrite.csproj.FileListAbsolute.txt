@@ -1,0 +1,14 @@
+C:\Users\Prathik.b\Source\Repos\XMLReadWrite\XMLReadWrite\bin\Debug\net8.0\XMLReadWrite.exe
+C:\Users\Prathik.b\Source\Repos\XMLReadWrite\XMLReadWrite\bin\Debug\net8.0\XMLReadWrite.deps.json
+C:\Users\Prathik.b\Source\Repos\XMLReadWrite\XMLReadWrite\bin\Debug\net8.0\XMLReadWrite.runtimeconfig.json
+C:\Users\Prathik.b\Source\Repos\XMLReadWrite\XMLReadWrite\bin\Debug\net8.0\XMLReadWrite.dll
+C:\Users\Prathik.b\Source\Repos\XMLReadWrite\XMLReadWrite\bin\Debug\net8.0\XMLReadWrite.pdb
+C:\Users\Prathik.b\Source\Repos\XMLReadWrite\XMLReadWrite\obj\Debug\net8.0\XMLReadWrite.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Prathik.b\Source\Repos\XMLReadWrite\XMLReadWrite\obj\Debug\net8.0\XMLReadWrite.AssemblyInfoInputs.cache
+C:\Users\Prathik.b\Source\Repos\XMLReadWrite\XMLReadWrite\obj\Debug\net8.0\XMLReadWrite.AssemblyInfo.cs
+C:\Users\Prathik.b\Source\Repos\XMLReadWrite\XMLReadWrite\obj\Debug\net8.0\XMLReadWrite.csproj.CoreCompileInputs.cache
+C:\Users\Prathik.b\Source\Repos\XMLReadWrite\XMLReadWrite\obj\Debug\net8.0\XMLReadWrite.dll
+C:\Users\Prathik.b\Source\Repos\XMLReadWrite\XMLReadWrite\obj\Debug\net8.0\refint\XMLReadWrite.dll
+C:\Users\Prathik.b\Source\Repos\XMLReadWrite\XMLReadWrite\obj\Debug\net8.0\XMLReadWrite.pdb
+C:\Users\Prathik.b\Source\Repos\XMLReadWrite\XMLReadWrite\obj\Debug\net8.0\XMLReadWrite.genruntimeconfig.cache
+C:\Users\Prathik.b\Source\Repos\XMLReadWrite\XMLReadWrite\obj\Debug\net8.0\ref\XMLReadWrite.dll
