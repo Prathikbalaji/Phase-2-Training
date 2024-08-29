@@ -1,0 +1,122 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="RestaurantOrderingSystem.Site" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Restaurant Ordering System</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .menu-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .menu-icon div {
+            background-color: #333;
+            height: 4px;
+            width: 30px;
+            margin: 6px 0;
+            transition: transform 0.4s, opacity 0.4s;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: width 0.5s ease-in-out;
+            padding-top: 60px;
+            z-index: 999;
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #818181;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidebar-open {
+            width: 250px;
+        }
+
+        .sidebar-closed {
+            width: 0;
+        }
+
+        .menu-icon.active div:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .menu-icon.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-icon.active div:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        #MainContent {
+            margin-left: 0;
+            transition: margin-left 0.5s;
+        }
+
+        .sidebar-open + #MainContent {
+            margin-left: 250px;
+        }
+
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="menu-icon" onclick="toggleSidebar()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div id="sidebar" class="sidebar sidebar-closed">
+            <asp:HyperLink ID="HomeLink" runat="server" NavigateUrl="~/home.aspx">Home</asp:HyperLink>
+            <asp:HyperLink ID="MenuItemsLink" runat="server" NavigateUrl="~/menu.aspx">Menu Items</asp:HyperLink>
+            <asp:HyperLink ID="AddOrderLink" runat="server" NavigateUrl="~/AddOrder.aspx">Add Items</asp:HyperLink>
+            <asp:HyperLink ID="OrdersLink" runat="server" NavigateUrl="~/Orders.aspx">My Orders</asp:HyperLink>
+            <asp:HyperLink ID="ManageOrdersLink" runat="server" NavigateUrl="~/ManageOrders.aspx">Manage Orders</asp:HyperLink>
+        </div>
+
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </form>
+
+    <script type="text/javascript">
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var menuIcon = document.querySelector(".menu-icon");
+            if (sidebar.classList.contains("sidebar-open")) {
+                sidebar.classList.remove("sidebar-open");
+                sidebar.classList.add("sidebar-closed");
+                menuIcon.classList.remove("active");
+            } else {
+                sidebar.classList.remove("sidebar-closed");
+                sidebar.classList.add("sidebar-open");
+                menuIcon.classList.add("active");
+            }
+        }
+    </script>
+</body>
+</html>
