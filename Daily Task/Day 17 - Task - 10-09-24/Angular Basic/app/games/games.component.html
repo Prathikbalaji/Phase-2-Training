@@ -1,0 +1,29 @@
+<p>Games Store</p>
+<table class="table table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>GameID </th>
+            <th>Game Name </th>
+            <th>Game Type</th>
+            <th>Price</th>
+            <th>In Stock</th>
+            <th>Rating</th>
+            <th>Game Image</th>
+            <th>Buy</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let games of gamelst ">
+            <td>{{games.GameID}}</td>
+            <td>{{games.GameName}}</td>
+            <td>{{games.GameType}}</td>
+            <td>{{games.GamePrice}}</td>
+            <td>{{games.InStock}}</td>
+            <td [style.color]="games.Rating >= 4 ? 'green' : games.Rating >= 2 ? 'orange' : 'red'">{{ games.Rating }} ★ </td>
+            <td> <img [src]="games.GameImage" [ngStyle]="{'border-radius':'10px'}" width="150px" alt="{{games.GameName}}"/></td>
+            <td><button [disabled]="games.InStock <= 0" (click)="addToCart(games)" class="btn btn-success">Add To Cart</button></td>
+        </tr>
+    </tbody>
+    </table>
+    <button id="btnbuy" class="btn btn-success" (click)="buy()" >Buy Now</button>
+    

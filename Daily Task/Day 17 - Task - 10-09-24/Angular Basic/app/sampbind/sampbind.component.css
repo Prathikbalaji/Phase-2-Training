@@ -1,0 +1,16 @@
+h1{
+    color: rgb(53, 88, 43);
+}
+
+p{
+    font-size: large;
+    font-weight: bold;
+}
+
+.yellow{
+    color:yellow;
+}
+
+.violet{
+    color:violet;
+}
