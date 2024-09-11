@@ -1,0 +1,22 @@
+<h1>Prathik Balaji N</h1>
+<p>{{fname}}</p>
+<p>{{lname}}</p>
+<!-- <img [src]="imageurl" width="100%"> -->
+<h1 [innerText]="fname"></h1>
+
+<button (click)="countt()" class="btn btn-success">Click Me</button>
+<h1>{{count}}</h1>
+
+<button [disabled]="butn" (click)="display()" class="btn btn-success" >Click Here</button>
+<h1>{{fname}}  {{lname}}</h1>
+
+<input type="text" (input)="show($event)">
+<p>{{val}}</p>
+
+<input type="text" name="value" [(ngModel)] = "value">
+<p>{{value}}</p>
+
+<p [ngStyle]="{'color':'gray'}" >Hello</p>
+<p [ngClass]="'yellow'" >Hello</p>
+<p [className]="'violet'" >Hello</p>
+<p ngClass="yellow" >Hello</p>

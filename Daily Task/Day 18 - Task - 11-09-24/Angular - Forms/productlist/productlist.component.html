@@ -1,0 +1,97 @@
+<p>productlist works!</p>
+<div style="display: flex;margin-bottom: 10px;">
+    <select [(ngModel)] ="Val" style="margin-right: 5px;padding: 10px; font-size: 16px; border: 2px solid #ccc; border-radius: 5px; background-color: #f9f9f9; color: #333; width: 200px; cursor: pointer;" >
+        <option value="All" >All</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Clothings">Clothings</option>
+        <option value="Furniture">Furniture</option>
+    </select>
+    <div [ngSwitch]="Val">
+        <div *ngSwitchCase="'Electronics'"><img src="public/ele.png" style="width: 21%;"></div>
+        <div *ngSwitchCase="'Clothings'"><img src="public/clo.jpg" style="width: 14%;"></div>
+        <div *ngSwitchCase="'Furniture'"><img src="public/fur.png" style="width: 21%;"></div>
+        <div *ngSwitchDefault></div>
+    </div>
+</div>
+
+<table class="table table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Product Category</th>
+            <th>Product Stock</th>
+            <th>Product Image</th>
+            <th>Add To Cart</th>
+        </tr>
+    </thead>
+    <tr *ngFor = "let pro of prolist" [hidden] = "Val !='All' && Val != pro.ProCategory" >
+        <td>{{pro.ProID}}</td>
+        <td>{{pro.ProName}}</td>
+        <ng-container *ngIf="pro.ProStock == 0; then notAvail; else isAvail" ></ng-container>
+        <ng-template #isAvail ><td>{{pro.ProPrice}}</td></ng-template>
+        <ng-template #notAvail ><td>Out Of Stock</td></ng-template>
+        <td>{{pro.ProCategory}}</td>
+        <td>{{pro.ProStock}}</td>
+        <td><img [src] = "pro.ProImage" style="width: 200px;"></td>
+        <td><button [disabled]="pro.ProStock == 0" Class="btn btn-primary">Add To Cart</button></td>
+    </tr>
+</table>
+<!-- (ngSubmit)="onSubmit(contactForm)" -->
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" style="max-width: 400px; margin: 20px auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
+
+    <div style="margin-bottom: 16px;">
+        <label for="ProID" style="display: block; margin-bottom: 8px; font-weight: bold; color: #333;">Product ID</label>
+        <input type="number" name="ProID" ngModel #id="ngModel" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" />
+        <div *ngIf="id.invalid && id.touched">
+          <small *ngIf="id.errors?.['required']" style="color: red;">Product Id is required.</small>
+        </div>
+      </div>  
+
+    <div style="margin-bottom: 16px;">
+      <label for="productname" style="display: block; margin-bottom: 8px; font-weight: bold; color: #333;">Product Name</label>
+      <input type="text" name="ProName" ngModel #pname="ngModel" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" />
+      <div *ngIf="pname.invalid && pname.touched">
+        <small *ngIf="pname.errors?.['required']" style="color: red;">Product Name is required.</small>
+      </div>
+    </div>
+    
+    <div style="margin-bottom: 16px;">
+      <label for="price" style="display: block; margin-bottom: 8px; font-weight: bold; color: #333;">Price</label>
+      <input type="number" name="ProPrice" ngModel #price="ngModel" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" />
+      <div *ngIf="price.invalid && price.touched">
+        <small *ngIf="price.errors?.['required']" style="color: red;">Price is required.</small>
+      </div>
+    </div>
+    
+    <div style="margin-bottom: 16px;">
+      <label for="category" style="display: block; margin-bottom: 8px; font-weight: bold; color: #333;">Category</label>
+      <input type="text" name="ProCategory" ngModel #category="ngModel" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" />
+      <div *ngIf="category.invalid && category.touched">
+        <small *ngIf="category.errors?.['required']" style="color: red;">Category is required.</small>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 16px;">
+      <label for="stock" style="display: block; margin-bottom: 8px; font-weight: bold; color: #333;">Stock</label>
+      <input type="number" name="ProStock" ngModel #stock="ngModel" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" />
+      <div *ngIf="stock.invalid && stock.touched">
+        <small *ngIf="stock.errors?.['required']" style="color: red;">Stock is required.</small>
+      </div>
+    </div> 
+    
+    <div style="margin-bottom: 16px;">
+        <label for="ProImage" style="display: block; margin-bottom: 8px; font-weight: bold; color: #333;">Product Image</label>
+        <input type="text" name="ProImage" ngModel #img="ngModel" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" />
+        <div *ngIf="img.invalid && img.touched">
+          <small *ngIf="id.errors?.['required']" style="color: red;">Product Image is required.</small>
+        </div>
+      </div>  
+    
+    <p style="text-align: center;">
+      <button type="submit" [disabled]="contactForm.invalid" style="padding: 10px 20px; border: none; border-radius: 4px; background-color: #007bff; color: white; font-size: 16px; cursor: pointer;">Submit</button>
+    </p>
+</form>
+
+  

@@ -1,0 +1,9 @@
+<p>parent-todo works!</p>
+
+<app-child-todo  (added)="addtasks($event)" ></app-child-todo>
+
+ <ul>
+    <li *ngFor="let list of lists" >
+        {{list}}
+    </li>
+ </ul>
